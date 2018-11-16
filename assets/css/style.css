@@ -1,0 +1,40 @@
+body {
+    background-image: url("../images/cats.png");
+    color: white;
+    text-align: center;
+    align-content: center;  
+
+}
+
+.wrapper {
+    display: inline-block;
+}
+
+.trivia-card {
+    background-color: #feff9c;
+    width: 480px;
+    height: 480px;
+    border: #383428;
+    /* box-shadow: 5px 5px rgb(82, 82, 82); */
+}
+
+#title, #timer, #question, #answer {
+    color: #383428;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+#title {
+    align-self: auto;
+    padding: 25px;
+}
+#timer {
+    padding: 35px 0px 0px 0px;
+}
+
+#question {
+    padding: 50px 0px 30px 0px;
+}
+
+.container {
+    float: center;
+}
