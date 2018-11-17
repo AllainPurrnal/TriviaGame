@@ -8,12 +8,13 @@ body {
 
 .wrapper {
     display: inline-block;
+    padding: 150px;
 }
 
 .trivia-card {
     background-color: #feff9c;
-    width: 480px;
-    height: 480px;
+    width: 520px;
+    height: 520px;
     border: #383428;
     /* box-shadow: 5px 5px rgb(82, 82, 82); */
 }
@@ -28,13 +29,17 @@ body {
     padding: 25px;
 }
 #timer {
-    padding: 35px 0px 0px 0px;
+    padding: 25px 0px 0px 0px;
 }
 
 #question {
-    padding: 50px 0px 30px 0px;
+    padding: 40px 0px 30px 0px;
 }
 
 .container {
     float: center;
+}
+
+#answer {
+    font-size: 16px;
 }
