@@ -13,8 +13,8 @@ body {
 
 .trivia-card {
     background-color: #feff9c;
-    width: 520px;
-    height: 520px;
+    width: 620px;
+    height: 620px;
     border: #383428;
     /* box-shadow: 5px 5px rgb(82, 82, 82); */
 }
@@ -26,14 +26,14 @@ body {
 
 #title {
     align-self: auto;
-    padding: 25px;
+    padding: 50px 25px 20px 25px;
 }
 #timer {
-    padding: 25px 0px 0px 0px;
+    padding: 30px 0px 0px 0px;
 }
 
 #question {
-    padding: 40px 0px 30px 0px;
+    padding: 0px 0px 10px 0px;
 }
 
 .container {
@@ -42,4 +42,17 @@ body {
 
 #answer {
     font-size: 16px;
+    float: auto;
+}
+
+.btn {
+    border: none;
+    background-color: #feff9c;  
+    color: #383428;
+    padding: 20px;
+
+}
+
+h1 {
+    font-size: 50px;
 }
