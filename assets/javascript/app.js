@@ -2,7 +2,7 @@ $(document).ready(function() {
     
 var triviaQuestions = [
     questions = [
-            "What are a group of cats called?", "What are a group of kittens called?","How many muscles do cats have in their ears?","How many teeth do cats have?","What is the top speed of cats?","A cat can jump about __ times their length.","On average, how long do cats spend asleep per day?","Which behavior did cats develop to exclusively communicate with humans?","A cat with a question-mark shaped tail is asking...","When was the first known cat video recorded?"
+            "What are a group of cats called?", "What are a group of kittens called?","How many muscles do cats have in their ears?","How many teeth do cats have?","What is the top speed of cats?","A cat can jump about _ times their length.","On average, how long do cats spend asleep per day?","Which behavior did cats develop to exclusively communicate with humans?","A cat with a question-mark shaped tail is asking...","When was the first known cat video recorded?"
     ],//end of questions array
     answerList = [
             {   choice: ["A Cloward", "A Murder", "A Cauldron", "A Sleuth"],
@@ -43,6 +43,7 @@ var questionTracker = 0;
 var i = 0;
 var gameEnd = false;
 var userChoice;
+var cooldown = 0;
 
 function gameDisplay() {
     //Question output
@@ -52,6 +53,7 @@ function gameDisplay() {
     $('#an2').html("<h3>" + triviaQuestions[1][i].choice[1] + "</h3>");
     $('#an3').html("<h3>" + triviaQuestions[1][i].choice[2] + "</h3>");
     $('#an4').html("<h3>" + triviaQuestions[1][i].choice[3] + "</h3>");
+    console.log(correct);
 };
 
 function buttonClick() {    
@@ -78,23 +80,38 @@ function buttonClick() {
 };
 
 function answerCheck() {
-    if (userChoice == triviaQuestions[1][i].correctAnswer) {
+    if (userChoice === triviaQuestions[1][i].correctAnswer) {
+        $('#question').html('<button id=next class="btn"><h3> Correct! </h3></button>');
+        // $('#answer').html('<img src="assets/images/correct.gif" alt="Celebratory Cat">');
+        nextButton();
         correct++;
-        $('#question').html('<h3> Correct! </h3>');
-        $('#answer').html('<img src="assets/images/correct.gif" alt="Celebratory Cat">');
     } else {
-        $('#question').html('<h3> Wrong! </h3>');
-        $('#answer').html('<h3> The correct answer is: ' + triviaQuestions[1][i].correctAnswer + '</h3>');
-        $('#answer').append('<img src="assets/images/wrong.gif" alt="Crying Cat">');
+        $('#question').html('<button id=next class="btn"><h3> Wrong! </h3></button>');
+        // $('#answer').html('<h3> The correct answer is: ' + triviaQuestions[1][i].correctAnswer + '</h3>' + '<img src="assets/images/wrong.gif" alt="Crying Cat">');
+        nextButton();
     }  
+};
+
+function gameResults() {
+    $('#question').html("<h3> You got " + correct + " out of " + triviaQuestions[0].length + ".")
+};
+
+// Next step is to turn nextButton() into a timer to have it loop through the entire question array.
+// So far, I can't get the gif's that appear after each answer to be removed so the next set of choices can appear. 
+
+function nextButton() {
+    $('#next').on("click", function() {
+        i++;
+        if (i < triviaQuestions[0].length) {
+            
+            gameDisplay();
+            buttonClick();
+        } else gameResults();
+    });
 };
 
 gameDisplay();
 buttonClick();
-
-//
-//testing zone, don't add anything above this line!!!
-//
 
 
 }); //end of document.ready

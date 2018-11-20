@@ -29,6 +29,7 @@ body {
     padding: 50px 25px 20px 25px;
 }
 #timer {
+    float: 0;
     padding: 30px 0px 0px 0px;
 }
 
@@ -53,6 +54,14 @@ body {
 
 }
 
+#next {
+    padding: 0px;
+}
+
 h1 {
     font-size: 50px;
+}
+
+h3 {
+    /* font-size: 16px; */
 }
